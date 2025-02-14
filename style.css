@@ -1,0 +1,208 @@
+/* Import fonts */
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');*/
+
+/* Base colors and dark theme */
+:root {
+    --font-roboto: 'Roboto', sans-serif;
+    --font-quicksand: 'Quicksand', sans-serif;
+
+    /* Your original colors */
+    --bright-cyan: #46dbe3;
+    --medium-blue: #4678e3;
+    --light-blue: #46aae3;
+    --turquoise: #53e6bc;
+    --deep-blue: #4647e3;
+    --pale-blue: #9fdcff;
+
+    /* Dark theme background colors */
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --dark-input: #2a2a2a;
+}
+
+/* Color mixins with transparency */
+.dark {
+    --bright-cyan-90: color-mix(in srgb, var(--bright-cyan) 90%, transparent);
+    --bright-cyan-50: color-mix(in srgb, var(--bright-cyan) 50%, transparent);
+    --bright-cyan-25: color-mix(in srgb, var(--bright-cyan) 25%, transparent);
+    --bright-cyan-10: color-mix(in srgb, var(--bright-cyan) 10%, transparent);
+
+    --medium-blue-75: color-mix(in srgb, var(--medium-blue) 75%, transparent);
+
+    --light-blue-90: color-mix(in srgb, var(--light-blue) 90%, transparent);
+    --light-blue-50: color-mix(in srgb, var(--light-blue) 50%, transparent);
+    --light-blue-25: color-mix(in srgb, var(--light-blue) 25%, transparent);
+    --light-blue-10: color-mix(in srgb, var(--light-blue) 10%, transparent);
+
+    --deep-blue-10: color-mix(in srgb, var(--deep-blue) 10%, transparent);
+
+    --turquoise-90: color-mix(in srgb, var(--turquoise) 90%, transparent);
+    --turquoise-10: color-mix(in srgb, var(--turquoise) 10%, transparent);
+    --turquoise-05: color-mix(in srgb, var(--turquoise) 5%, transparent);
+
+    /* Theme colors for Shadcn */
+    --background: var(--dark-bg);
+    --foreground: var(--pale-blue);
+
+    --card: var(--dark-card);
+    --card-foreground: var(--pale-blue);
+
+    --popover: var(--dark-card);
+    --popover-foreground: var(--pale-blue);
+
+    --primary: var(--bright-cyan);
+    --primary-foreground: var(--dark-bg);
+
+    --secondary: var(--dark-input);
+    --secondary-foreground: var(--pale-blue);
+
+    --muted: var(--dark-input);
+    --muted-foreground: var(--light-blue-50);
+
+    --accent: var(--turquoise-10);
+    --accent-foreground: var(--pale-blue);
+
+    --destructive: #ff6b6b;
+    --destructive-foreground: white;
+
+    --border: var(--dark-input);
+    --input: var(--dark-input);
+    --ring: var(--bright-cyan-25);
+}
+
+/* Base styles */
+body {
+    font-family: var(--font-roboto);
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-quicksand);
+    color: var(--bright-cyan);
+}
+
+/* Input fields in dark mode */
+.dark input,
+.dark select,
+.dark textarea {
+    background-color: var(--secondary) !important;
+    color: var(--foreground) !important;
+    border-color: var(--border) !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+    border-color: var(--bright-cyan) !important;
+    box-shadow: 0 0 0 2px var(--bright-cyan-10) !important;
+}
+
+/* Common layout classes */
+.page-container {
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+/* Card styles */
+.shadcn-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px var(--turquoise-05);
+}
+
+/* Button styles */
+.shadcn-button {
+    display: inline-flex;
+    align-items: center;
+    justify-center: center;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.shadcn-button-primary {
+    background-color: var(--bright-cyan-50);
+    color: var(--dark-bg);
+}
+
+.shadcn-button-primary:hover {
+    background-color: var(--bright-cyan-90);
+    transform: translateY(-1px);
+}
+
+/* Table styles */
+/* Table styles */
+.game-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-roboto);
+}
+
+.game-table th {
+    background-color: var(--turquoise-10);
+    color: var(--bright-cyan);
+    font-family: var(--font-quicksand);
+    font-weight: 500;
+    text-align: left;
+    padding: 0.875rem 1rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.game-table td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--pale-blue);
+}
+
+.game-table tbody tr:hover {
+    background-color: var(--turquoise-05);
+}
+
+/* Action buttons styling */
+.action-button {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-family: var(--font-quicksand);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.edit-button {
+    border: 1px solid var(--bright-cyan);
+    color: var(--bright-cyan);
+    background-color: var(--bright-cyan-10);
+}
+
+.edit-button:hover {
+    background-color: var(--bright-cyan);
+    color: var(--dark-bg);
+}
+
+.delete-button {
+    border: 1px solid var(--light-blue);
+    color: var(--light-blue);
+    background-color: var(--light-blue-10);
+}
+
+.delete-button:hover {
+    background-color: var(--light-blue);
+    color: var(--dark-bg);
+}
+
+.logout-button {
+    border: 1px solid var(--pale-blue);
+    color: var(--pale-blue);
+    background-color: var(--deep-blue-10);
+}
+
+.logout-button:hover {
+    background-color: var(--pale-blue);
+    color: var(--dark-bg);
+}
