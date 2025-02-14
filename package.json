@@ -1,0 +1,15 @@
+{
+  "name": "cs4241-c25-a2-short-stack",
+  "version": "0.1.0",
+  "description": "WPI CS4241-C25creative assignment",
+  "author": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mime": "^2.4.4"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
